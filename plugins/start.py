@@ -20,7 +20,15 @@ from pyrogram import filters, enums
 from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked
 from pyrogram.types import InlineKeyboardMarkup, Message
 
-from helper_func import decode, get_messages, subsall, subsch, subsgc
+from helper_func import (
+    subs1,
+    subs2,
+    subs3,
+    subs4,
+    subsall,
+    decode, 
+    get_messages, 
+)
 
 from .button import fsub_button, start_button
 
@@ -46,7 +54,7 @@ async def _human_time_duration(seconds):
     return ", ".join(parts)
 
 
-@Bot.on_message(filters.command("start") & filters.private & subsall & subsch & subsgc)
+@Bot.on_message(filters.command("start") & filters.private & subsall & subs1 & subs2 & subs3 & subs4)
 async def start_command(client: Bot, message: Message):
     uid = message.from_user.id
     user_name = (
