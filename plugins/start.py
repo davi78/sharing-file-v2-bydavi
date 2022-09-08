@@ -189,7 +189,7 @@ async def send_text(client: Bot, message: Message):
         blocked = 0
         deleted = 0
         unsuccessful = 0
-        batas = 100
+        batas = 1000
         pls_wait = await message.reply(
             "<code>Broadcasting Message Tunggu Sebentar...</code>"
         )
@@ -211,7 +211,7 @@ async def send_text(client: Bot, message: Message):
                     unsuccessful += 1
                 total += 1
                 if total == batas:
-                    batas += 100
+                    batas += 1000
                     status = f"""<b><u>Proses Broadcast Masih Berlangsung</u>
 Jumlah Pengguna: <code>{total}</code>
 Berhasil: <code>{successful}</code>
